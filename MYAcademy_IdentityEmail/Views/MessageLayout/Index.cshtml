@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_MessageLayoutStyleComponentPartial")
+<body>
+
+
+<!-- =====================================================
+_Sidebar.cshtml
+===================================================== -->
+@await Component.InvokeAsync("_MessageLayoutSidebarComponentPartial")
+
+
+
+
+<!-- =====================================================
+_Layout.cshtml — ana alan
+===================================================== -->
+<div class="app-main">
+
+
+<!-- =================================================
+_Navbar.cshtml
+================================================= -->
+@await Component.InvokeAsync("_MessageLayoutNavbarComponentPartial")
+
+
+
+
+<!-- =================================================
+Inbox.cshtml
+================================================= -->
+@RenderBody()
+</div>
+
+@await Component.InvokeAsync("_MessageLayoutScriptsComponentPartial")
+</body>
+</html>
+
+
+
+
+
