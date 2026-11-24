@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MYAcademy_IdentityEmail.Migrations
 {
     [DbContext(typeof(EmailContext))]
-    [Migration("20261110173807_mig1")]
+    [Migration("20261122093951_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -38,7 +38,6 @@ namespace MYAcademy_IdentityEmail.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -49,7 +48,6 @@ namespace MYAcademy_IdentityEmail.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -92,6 +90,9 @@ namespace MYAcademy_IdentityEmail.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<int?>("ValidCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
